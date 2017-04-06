@@ -8,12 +8,7 @@ function showBoard() {
 function jump() {
     
 }
-
-$(document).ready(function() {
-   $('#start').click(function() {
-      showBoard();
-   });
-   function checkCollision() {
+    function checkCollision() {
     var blueLeft = $("#mario").offset().left;
     var redLeft = $("#enemy").offset().left;
     var blueRight = blueLeft + $("#mario").width();
@@ -23,6 +18,12 @@ $(document).ready(function() {
         $("body").css("background-image", "url('https://m.popkey.co/617db4/QlYZV_s-200x150.gif')");
     }
 }
+
+$(document).ready(function() {
+   $('#start').click(function() {
+      showBoard();
+   });
+   
    $('#jump').mousedown(function() {
       $('#mario').css('bottom', '175px');
       $('#coin').hide();
@@ -35,6 +36,7 @@ $(document).ready(function() {
       $('#coin').show();
       $('#count').text(count++);
    });
+   
    
    $("body").keydown(function(e) {
       if(e.keyCode == 37) { // left

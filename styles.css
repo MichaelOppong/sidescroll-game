@@ -8,6 +8,7 @@ h1{
 
 #board{
     display:none;
+    background-repeat: repeat-x;
 }
 
 #game{
