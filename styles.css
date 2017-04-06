@@ -26,7 +26,8 @@ h1{
 }
 #enemy{
     position: absolute;
-    bottom: 60px;
+    height:50px;
+    bottom: 90px;
     left: 565px;
 }
 #coin{

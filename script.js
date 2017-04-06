@@ -39,9 +39,12 @@ $(document).ready(function() {
    $("body").keydown(function(e) {
       if(e.keyCode == 37) { // left
               $("#mario").css("left", $("#mario").offset().left - 30);
+              checkCollision();
+          
       }
       else if(e.keyCode == 39) { // right
                      $("#mario").css("left", $("#mario").offset().left + 30);
+        checkCollision();
 
       } 
       else if(e.keyCode == 38) { // top
@@ -58,7 +61,10 @@ $(document).ready(function() {
           if(e.keyCode == 38){
           $('#mario').css('bottom', '60px');
           }
-                  checkCollision();
+  else {
+          return;
+      }
+                        checkCollision();
 
      });
 
