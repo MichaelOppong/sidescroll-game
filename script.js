@@ -13,7 +13,16 @@ $(document).ready(function() {
    $('#start').click(function() {
       showBoard();
    });
-   
+   function checkCollision() {
+    var blueLeft = $("#mario").offset().left;
+    var redLeft = $("#enemy").offset().left;
+    var blueRight = blueLeft + $("#mario").width();
+    var redRight = redLeft + $("#enemy").width();
+    if(blueRight > redLeft && blueLeft < redRight) {
+        alert("Congratulations you played yourself!")
+        $("body").css("background-image", "url('https://m.popkey.co/617db4/QlYZV_s-200x150.gif')");
+    }
+}
    $('#jump').mousedown(function() {
       $('#mario').css('bottom', '175px');
       $('#coin').hide();
@@ -29,16 +38,29 @@ $(document).ready(function() {
    
    $("body").keydown(function(e) {
       if(e.keyCode == 37) { // left
-        $("#game").animate({
-          backgroundPosition: "+=980"
-        });
+              $("#mario").css("left", $("#mario").offset().left - 30);
       }
       else if(e.keyCode == 39) { // right
-        $("#game").animate({
-          backgroundPosition: "-=980"
-        });
-      } else if(e.keyCode == 49) {
-          jump();
+                     $("#mario").css("left", $("#mario").offset().left + 30);
+
+      } 
+      else if(e.keyCode == 38) { // top
+            $('#mario').css('bottom', '175px');
+                     //$("#mario").css("bottom", $("#mario").offset().bottom + 30);
+        checkCollision();
+
+      }
+      else {
+          return;
       }
     });
+     $("body").keyup(function(e) {
+          if(e.keyCode == 38){
+          $('#mario').css('bottom', '60px');
+          }
+                  checkCollision();
+
+     });
+
+
 });

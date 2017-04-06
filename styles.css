@@ -13,8 +13,8 @@ h1{
 #game{
     /*display:none;*/
     position: relative;
-    height: 385px;
-    background: url("images/background.png") repeat-x;   
+    height: 285px;
+    background: url("http://orig09.deviantart.net/a2ee/f/2016/068/4/a/my_creative_sonic_sprite_background_1_by_sonicmechaomega999-d9uirad.png") repeat-x;   
     
 }
 
@@ -22,13 +22,17 @@ h1{
     height:100px;
     position: absolute;
     bottom: 60px;
-    left: 285px;
+    left: 265px;
 }
-
-#coin{
-    height:50px;  
+#enemy{
     position: absolute;
-    bottom: 250px;
+    bottom: 60px;
+    left: 565px;
+}
+#coin{
+    height:35px;  
+    position: absolute;
+    bottom: 190px;
     left: 300px;
 }
 
